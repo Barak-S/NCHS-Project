@@ -31,8 +31,8 @@ export default class DisplayGrid extends React.Component{
         return(
             <div style={{textAlign: "center", paddingTop: 50}}>
                 
-                <h3>{this.state.source}</h3>
-                <p style={{marginTop: 40, marginLeft: 80, marginRight:80}}>{this.state.description}</p>
+                <h3 style={{color: "#191970", fontWeight: "600"}}>{this.state.source}</h3>
+                <p style={{marginTop: 40, marginLeft: 80, marginRight:80, }}>{this.state.description}</p>
                 <div style={{margin: 80}}>
                 <Table striped bordered hover className="table">
                     <thead>
