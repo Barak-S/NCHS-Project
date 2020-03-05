@@ -23,3 +23,12 @@ tr:nth-child(even) {
 th {
   background-color: #E6EFF6;
 }
+
+#dropdown-button-drop-up{
+  color: white;
+  font-weight: bold;
+  background-color: #013C71;
+  margin-bottom: 12.5px;
+  border-color: #E6EFF6;
+  border-width:1.5;
+}

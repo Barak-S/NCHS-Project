@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 
 
 
@@ -17,16 +17,16 @@ export default class Navigator extends React.Component{
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home" style={{color:"#191970", fontWeight: "600", fontSize: 15}}>ABOUT US</Nav.Link>
-                        <Nav.Link href="#link" style={{color:"#191970", fontWeight: "600", fontSize: 15}}>WHY CROSSIX</Nav.Link>
-                        <Nav.Link href="#link" style={{color:"#191970", fontWeight: "600", fontSize: 15}}>SOLUTIONS</Nav.Link>
-                        <Nav.Link href="#link" style={{color:"#191970", fontWeight: "600", fontSize: 15}}>NEWS AND EVENTS</Nav.Link>
-                        <Nav.Link href="#link" style={{color:"#191970", fontWeight: "600", fontSize: 15}}>CAREERS</Nav.Link>
-                        <Nav.Link href="#link" style={{color:"#191970", fontWeight: "600", fontSize: 15}}>CONTACT US</Nav.Link>   
+                        <Nav.Link href="#home" style={{color:"#013C71", fontWeight: "700", fontSize: 15}}>ABOUT US</Nav.Link>
+                        <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15}}>WHY CROSSIX</Nav.Link>
+                        <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15}}>SOLUTIONS</Nav.Link>
+                        <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15}}>NEWS AND EVENTS</Nav.Link>
+                        <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15}}>CAREERS</Nav.Link>
+                        <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15}}>CONTACT US</Nav.Link>   
                     </Nav>
                     <div style={{paddingRight: 50}}>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{color:"#191970"}} />
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{color:"#013C71"}} />
                     </Form>
                     </div>
                 </Navbar.Collapse>
