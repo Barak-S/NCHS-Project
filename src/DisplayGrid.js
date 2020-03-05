@@ -50,7 +50,7 @@ export default class DisplayGrid extends React.Component{
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        
                     </tr>
                 )}
             )     
@@ -61,7 +61,7 @@ export default class DisplayGrid extends React.Component{
 
     render(){
 
-        
+        console.log(this.state.healthData)
         return(
             <div style={{textAlign: "center", paddingTop: 50}}>
                 
@@ -115,7 +115,6 @@ export default class DisplayGrid extends React.Component{
                             <th style={{color: "#013C71"}}>Suicide</th>
                             <th style={{color: "#013C71"}}>Cancer</th>
                             <th style={{color: "#013C71"}}>Kidney disease</th>
-                            <th style={{color: "#013C71"}}>Unintentional injuries</th>
                         </tr>
                     </thead>
                     <tbody>
