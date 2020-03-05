@@ -5,6 +5,7 @@
 .main-navigation {
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
   height: 85px;
+
 } 
 
 .table{
@@ -32,3 +33,11 @@ th {
   border-color: #E6EFF6;
   border-width:1.5;
 }
+
+.nav-link:hover {
+  height: 38px;
+  background-color: #F8981C;
+  border-radius:8px;
+}
+
+

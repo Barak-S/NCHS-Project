@@ -27,6 +27,12 @@ export default class DisplayGrid extends React.Component{
         
     }
 
+    changeYear(e){
+        this.setState({
+            year: e
+        })
+    }
+
     renderStates(){
         return(
             this.state.healthData.map(s=>{
@@ -49,12 +55,6 @@ export default class DisplayGrid extends React.Component{
                 )}
             )     
         ) 
-    }
-
-    changeYear(e){
-        this.setState({
-            year: e
-        })
     }
 
     
