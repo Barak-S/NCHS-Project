@@ -12,6 +12,8 @@ export default class DisplayGrid extends React.Component{
         places: []
     }
 
+    // E6EFF6 color for grid 
+
     componentDidMount(){
         fetch('https://data.cdc.gov/api/views/bi63-dtpu/rows.json?accessType=DOWNLOAD')
         .then (resp=>resp.json())
