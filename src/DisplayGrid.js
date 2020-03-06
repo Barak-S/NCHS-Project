@@ -4,6 +4,8 @@ import { ButtonToolbar, DropdownButton, Dropdown } from 'react-bootstrap';
 
 import './App.css';
 
+const url = "http://3d1376b7.ngrok.io/statistics"
+
 
 export default class DisplayGrid extends React.Component{
 
@@ -15,41 +17,40 @@ export default class DisplayGrid extends React.Component{
         year: "2017"
     }
 
-
-    componentDidMount(){
-        fetch('https://data.cdc.gov/api/views/bi63-dtpu/rows.json?accessType=DOWNLOAD')
-        .then (resp=>resp.json())
+    getYearStats(year){
+        fetch(url,{
+           method: "POST",
+           headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json' 
+           },
+           body: JSON.stringify({ year: year}) 
+        }).then (resp=>resp.json())
         .then(data=> this.setState({
-            healthData: data.data,
-            source: data.meta.view.name,
-            description: data.meta.view.description
-        }))
-        
+            healthData: data,
+        })) 
+
     }
 
-    changeYear(e){
+    componentDidMount(){
+        this.getYearStats(this.state.year)
+        // this.changeYear(this.state.year)
+    }
+
+
+    changeYear(year){
         this.setState({
-            year: e
-        })
+            year
+        },()=>this.getYearStats(this.state.year))
     }
 
     renderStates(){
         return(
             this.state.healthData.map(s=>{
                 return(
-                    <tr key={s[0]}>
-                        <td>{s[11]}</td>
-                        <td>{s[12]}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr key={s.id}>
+                        <td>{s.state}</td>
+                        <td>{s.count}</td>
                         
                     </tr>
                 )}
@@ -61,20 +62,20 @@ export default class DisplayGrid extends React.Component{
 
     render(){
 
-        console.log(this.state.healthData)
+        // console.log(this.state.healthData)
+
         return(
             <div style={{textAlign: "center", paddingTop: 50}}>
                 
-                <h3 style={{color: "#013C71", fontWeight: "600"}}>{this.state.source}</h3>
-                <p style={{marginTop: 40, marginLeft: 80, marginRight:80, color: "#013C71", fontSize: 16 }}>{this.state.description}</p>
+                <h3 style={{color: "#013C71", fontWeight: "600"}}>NCHS - Leading Causes of Death: United States</h3>
                 <div style={{marginTop: 50, marginRight: 55, marginLeft:55, marginBottom:100}}>
 
                 <ButtonToolbar>
                     <DropdownButton
-                        drop="up"
+                        drop="down"
                         title={`${this.state.year}`}
-                        id="dropdown-button-drop-up"
-                        key="up"
+                        id="dropdown-button-drop-down"
+                        key="down"
                         onSelect= {(e)=>this.changeYear(e)}
                     >
                         <Dropdown.Item eventKey="1999" style={{color: "#013C71"}}>1999</Dropdown.Item>
@@ -118,7 +119,7 @@ export default class DisplayGrid extends React.Component{
                         </tr>
                     </thead>
                     <tbody>
-                    {/* {this.renderStates()} */}
+                    {this.renderStates()}
                     </tbody>
                         
                 </Table>
