@@ -13,8 +13,8 @@ export default class DisplayGrid extends React.Component{
         healthData: [],
         source: '',
         description: '',
-        places: [],
-        year: "2017"
+        year: "2017",
+        states: []
     }
 
     getYearStats(year){
@@ -34,7 +34,7 @@ export default class DisplayGrid extends React.Component{
 
     componentDidMount(){
         this.getYearStats(this.state.year)
-        // this.changeYear(this.state.year)
+
     }
 
 
@@ -46,15 +46,27 @@ export default class DisplayGrid extends React.Component{
 
     renderStates(){
         return(
+
             this.state.healthData.map(s=>{
                 return(
                     <tr key={s.id}>
                         <td>{s.state}</td>
-                        <td>{s.count}</td>
+                        <td>{s.cause === "Unintentional injuries" && s.count }</td>
+                        <td>{s.cause === "All causes"&& s.count }</td>
+                        <td>{s.cause === "Alzheimer's disease"&& s.count }</td>
+                        <td>{s.cause === "Stroke"&& s.count }</td>
+                        <td>{s.cause === "CLRD"&& s.count }</td>
+                        <td>{s.cause === "Diabetes"&& s.count }</td>
+                        <td>{s.cause === "Heart disease"&& s.count }</td>
+                        <td>{s.cause === "Influenza and pneumonia"&& s.count }</td>
+                        <td>{s.cause === "Suicide"&& s.count }</td>
+                        <td>{s.cause === "Cancer"&& s.count }</td>
+                        <td>{s.cause === "Kidney disease"&& s.count }</td>
                         
                     </tr>
-                )}
-            )     
+
+                )
+            })      
         ) 
     }
 
@@ -62,13 +74,13 @@ export default class DisplayGrid extends React.Component{
 
     render(){
 
-        // console.log(this.state.healthData)
+        
 
         return(
             <div style={{textAlign: "center", paddingTop: 50}}>
                 
                 <h3 style={{color: "#013C71", fontWeight: "600"}}>NCHS - Leading Causes of Death: United States</h3>
-                <div style={{marginTop: 50, marginRight: 55, marginLeft:55, marginBottom:100}}>
+                <div style={{marginTop: 50, marginRight: 55, marginLeft:55, marginBottom:37.5}}>
 
                 <ButtonToolbar>
                     <DropdownButton
@@ -119,11 +131,13 @@ export default class DisplayGrid extends React.Component{
                         </tr>
                     </thead>
                     <tbody>
-                    {this.renderStates()}
+                        {this.renderStates()}
                     </tbody>
-                        
                 </Table>
+                        
+                
                 </div>
+                <p style={{color: '#013C71', paddingLeft: 55, paddingRight: 55,}}>This dataset presents the age-adjusted death rates for the 10 leading causes of death in the United States beginning in 1999. Data are based on information from all resident death certificates filed in the 50 states and the District of Columbia using demographic and medical characteristics. Age-adjusted death rates (per 100,000 population) are based on the 2000 U.S. standard population. Populations used for computing death rates after 2010 are postcensal estimates based on the 2010 census, estimated as of July 1, 2010. Rates for census years are based on populations enumerated in the corresponding censuses. Rates for non-census years before 2010 are revised using updated intercensal population estimates and may differ from rates previously published. Causes of death classified by the International Classification of Diseases, Tenth Revision (ICD–10) are ranked according to the number of deaths assigned to rankable causes. Cause of death statistics are based on the underlying cause of death. SOURCES CDC/NCHS, National Vital Statistics System, mortality data (see <a href="http://www.cdc.gov/nchs/deaths.htm">http://www.cdc.gov/nchs/deaths.htm</a>); and CDC WONDER (see <a href="http://wonder.cdc.gov">http://wonder.cdc.gov</a>).</p>
             </div>
         )
     }
