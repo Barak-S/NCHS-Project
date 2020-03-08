@@ -14,7 +14,7 @@ export default class DisplayGrid extends React.Component{
         source: '',
         description: '',
         year: "2017",
-        states: []
+        states: ["United States","Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming",]
     }
 
     getYearStats(year){
@@ -34,8 +34,9 @@ export default class DisplayGrid extends React.Component{
 
     componentDidMount(){
         this.getYearStats(this.state.year)
-
+        
     }
+
 
 
     changeYear(year){
@@ -69,12 +70,36 @@ export default class DisplayGrid extends React.Component{
             })      
         ) 
     }
+    renderRows(){
+        return(
 
+            this.state.states.map(s=>{
+                return(
+                    <tr key={s}>
+                        <td style={{fontWeight:'700', color: "#013C71"}}>{s}</td>
+                        
+                        {this.state.healthData.filter(obj=> obj.state === s).map(stat=>{
+                            return(
+                                
+                                    
+                                    <td>{ stat.count }</td>
+                                    
+                                
+                            )
+                        })}
+                        
+                    </tr>
+
+                )
+            })      
+        ) 
+    }
+    
+    
     
 
     render(){
 
-        
 
         return(
             <div style={{textAlign: "center", paddingTop: 50}}>
@@ -131,7 +156,7 @@ export default class DisplayGrid extends React.Component{
                         </tr>
                     </thead>
                     <tbody>
-                        {this.renderStates()}
+                        {this.renderRows()}
                     </tbody>
                 </Table>
                         
