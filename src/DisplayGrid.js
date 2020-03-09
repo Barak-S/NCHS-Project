@@ -1,6 +1,6 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table';
-import { ButtonToolbar, DropdownButton, Dropdown } from 'react-bootstrap';
+import { ButtonToolbar, DropdownButton, Dropdown, Form } from 'react-bootstrap';
 
 import './App.css';
 
@@ -14,7 +14,9 @@ export default class DisplayGrid extends React.Component{
         source: '',
         description: '',
         year: "2017",
-        states: ["United States","Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming",]
+        searchTerm: "",
+        states: [],
+        filteredStates:[]
     }
 
     getYearStats(year){
@@ -26,70 +28,88 @@ export default class DisplayGrid extends React.Component{
            },
            body: JSON.stringify({ year: year}) 
         }).then (resp=>resp.json())
-        .then(data=> this.setState({
+        .then(data=>{
+            const states = Array.from(new Set(data.map(s=> s.state))).sort((a,b)=>{
+                if (a === "United States" || b === "United States"){
+                    return 1
+                }
+                return a>b? 1:-1
+            })
+            this.setState({
             healthData: data,
-        })) 
+            states: [...states],
+            filteredStates: [...states]
+            })
+        }) 
 
     }
 
     componentDidMount(){
-        this.getYearStats(this.state.year)
-        
+        this.getYearStats(this.state.year)  
     }
 
 
 
     changeYear(year){
         this.setState({
+            searchTerm: "",
             year
         },()=>this.getYearStats(this.state.year))
     }
 
-    renderStates(){
-        return(
+    // renderStates(){
+    //     return(
 
-            this.state.healthData.map(s=>{
-                return(
-                    <tr key={s.id}>
-                        <td>{s.state}</td>
-                        <td>{s.cause === "Unintentional injuries" && s.count }</td>
-                        <td>{s.cause === "All causes"&& s.count }</td>
-                        <td>{s.cause === "Alzheimer's disease"&& s.count }</td>
-                        <td>{s.cause === "Stroke"&& s.count }</td>
-                        <td>{s.cause === "CLRD"&& s.count }</td>
-                        <td>{s.cause === "Diabetes"&& s.count }</td>
-                        <td>{s.cause === "Heart disease"&& s.count }</td>
-                        <td>{s.cause === "Influenza and pneumonia"&& s.count }</td>
-                        <td>{s.cause === "Suicide"&& s.count }</td>
-                        <td>{s.cause === "Cancer"&& s.count }</td>
-                        <td>{s.cause === "Kidney disease"&& s.count }</td>
+    //         this.state.healthData.map(s=>{
+    //             return(
+    //                 <tr key={s.id}>
+    //                     <td>{s.state}</td>
+    //                     <td>{s.cause === "Unintentional injuries" && s.count }</td>
+    //                     <td>{s.cause === "All causes"&& s.count }</td>
+    //                     <td>{s.cause === "Alzheimer's disease"&& s.count }</td>
+    //                     <td>{s.cause === "Stroke"&& s.count }</td>
+    //                     <td>{s.cause === "CLRD"&& s.count }</td>
+    //                     <td>{s.cause === "Diabetes"&& s.count }</td>
+    //                     <td>{s.cause === "Heart disease"&& s.count }</td>
+    //                     <td>{s.cause === "Influenza and pneumonia"&& s.count }</td>
+    //                     <td>{s.cause === "Suicide"&& s.count }</td>
+    //                     <td>{s.cause === "Cancer"&& s.count }</td>
+    //                     <td>{s.cause === "Kidney disease"&& s.count }</td>
                         
-                    </tr>
+    //                 </tr>
 
-                )
-            })      
-        ) 
+    //             )
+    //         })      
+    //     ) 
+    // }
+
+    searchTermChange(e){
+        this.setState({
+            searchTerm: e.target.value
+        },()=>this.updateStates())
     }
+
+    updateStates(){
+        this.setState({
+            filteredStates: this.state.states.filter(name=>name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+        })
+    }
+
+
     renderRows(){
         return(
-
-            this.state.states.map(s=>{
+            this.state.filteredStates.map(s=>{
                 return(
                     <tr key={s}>
                         <td style={{fontWeight:'700', color: "#013C71"}}>{s}</td>
                         
                         {this.state.healthData.filter(obj=> obj.state === s).map(stat=>{
                             return(
-                                
-                                    
-                                    <td>{ stat.count }</td>
-                                    
-                                
+                                <td key={ stat.id}>{ stat.count }</td>
                             )
                         })}
                         
                     </tr>
-
                 )
             })      
         ) 
@@ -106,6 +126,8 @@ export default class DisplayGrid extends React.Component{
                 
                 <h3 style={{color: "#013C71", fontWeight: "600"}}>NCHS - Leading Causes of Death: United States</h3>
                 <div style={{marginTop: 50, marginRight: 55, marginLeft:55, marginBottom:37.5}}>
+
+                <Form.Control placeholder="Search by state" style={{width: "10%", }} onChange={(e)=>this.searchTermChange(e)} />
 
                 <ButtonToolbar>
                     <DropdownButton
