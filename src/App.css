@@ -55,6 +55,18 @@ input{
   color: #013C71;
 }
 
+.dropdown-menu {
+  height: 225px;
+  overflow-y: scroll;
+  border-color: #013C71;
+}
+
+.searchTools{
+  display: inline-flex;
+  margin-bottom: 32.5px;
+  padding-left: 5%;
+  
+}
 
 
 

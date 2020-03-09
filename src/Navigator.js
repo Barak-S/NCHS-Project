@@ -26,7 +26,7 @@ export default class Navigator extends React.Component{
                     </Nav>
                     <div style={{paddingRight: 50}}>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{color:"#013C71", borderRadius: 40, borderColor: "#013C71", fontSize: 19}} />
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" style={{color:"#013C71", borderRadius: 40, borderColor: "#013C71", fontSize: 19, width: "70.5%"}} />
                     </Form>
                     </div>
                 </Navbar.Collapse>

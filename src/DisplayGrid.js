@@ -125,40 +125,43 @@ export default class DisplayGrid extends React.Component{
             <div style={{textAlign: "center", paddingTop: 50}}>
                 
                 <h3 style={{color: "#013C71", fontWeight: "600"}}>NCHS - Leading Causes of Death: United States</h3>
-                <div style={{marginTop: 50, marginRight: 55, marginLeft:55, marginBottom:37.5}}>
+                <div style={{marginTop: 45, marginRight: 55, marginLeft:55, marginBottom:37.5}}>
 
-                <Form.Control placeholder="Search by state" style={{width: "10%", }} onChange={(e)=>this.searchTermChange(e)} />
-
-                <ButtonToolbar>
-                    <DropdownButton
-                        drop="down"
-                        title={`${this.state.year}`}
-                        id="dropdown-button-drop-down"
-                        key="down"
-                        onSelect= {(e)=>this.changeYear(e)}
-                    >
-                        <Dropdown.Item eventKey="1999" style={{color: "#013C71"}}>1999</Dropdown.Item>
-                        <Dropdown.Item eventKey="2000" style={{color: "#013C71"}}>2000</Dropdown.Item>
-                        <Dropdown.Item eventKey="2001" style={{color: "#013C71"}}>2001</Dropdown.Item>
-                        <Dropdown.Item eventKey="2002" style={{color: "#013C71"}}>2002</Dropdown.Item>
-                        <Dropdown.Item eventKey="2003" style={{color: "#013C71"}}>2003</Dropdown.Item>
-                        <Dropdown.Item eventKey="2004" style={{color: "#013C71"}}>2004</Dropdown.Item>
-                        <Dropdown.Item eventKey="2005" style={{color: "#013C71"}}>2005</Dropdown.Item>
-                        <Dropdown.Item eventKey="2006" style={{color: "#013C71"}}>2006</Dropdown.Item>
-                        <Dropdown.Item eventKey="2007" style={{color: "#013C71"}}>2007</Dropdown.Item>
-                        <Dropdown.Item eventKey="2008" style={{color: "#013C71"}}>2008</Dropdown.Item>
-                        <Dropdown.Item eventKey="2009" style={{color: "#013C71"}}>2009</Dropdown.Item>
-                        <Dropdown.Item eventKey="2010" style={{color: "#013C71"}}>2010</Dropdown.Item>
-                        <Dropdown.Item eventKey="2011" style={{color: "#013C71"}}>2011</Dropdown.Item>
-                        <Dropdown.Item eventKey="2012" style={{color: "#013C71"}}>2012</Dropdown.Item>
-                        <Dropdown.Item eventKey="2013" style={{color: "#013C71"}}>2013</Dropdown.Item>
-                        <Dropdown.Item eventKey="2014" style={{color: "#013C71"}}>2014</Dropdown.Item>
-                        <Dropdown.Item eventKey="2015" style={{color: "#013C71"}}>2015</Dropdown.Item>
-                        <Dropdown.Item eventKey="2016" style={{color: "#013C71"}}>2016</Dropdown.Item>
-                        <Dropdown.Item eventKey="2017" style={{color: "#013C71"}}>2017</Dropdown.Item>
-                        
-                    </DropdownButton>  
-                </ButtonToolbar>
+                <div className="searchTools">
+                    <Form.Control placeholder="Search by state" style={{width: "57%",borderRadius: 40, borderColor: "#013C71", fontSize: 19, }} onChange={(e)=>this.searchTermChange(e)} />
+                
+                    <ButtonToolbar>
+                        <DropdownButton
+                            drop="down"
+                            title={`${this.state.year}`}
+                            id="dropdown-button-drop-down"
+                            key="down"
+                            onSelect= {(e)=>this.changeYear(e)}
+                        >
+                    
+                            <Dropdown.Item eventKey="1999" style={{color: "#013C71"}}>1999</Dropdown.Item>
+                            <Dropdown.Item eventKey="2000" style={{color: "#013C71"}}>2000</Dropdown.Item>
+                            <Dropdown.Item eventKey="2001" style={{color: "#013C71"}}>2001</Dropdown.Item>
+                            <Dropdown.Item eventKey="2002" style={{color: "#013C71"}}>2002</Dropdown.Item>
+                            <Dropdown.Item eventKey="2003" style={{color: "#013C71"}}>2003</Dropdown.Item>
+                            <Dropdown.Item eventKey="2004" style={{color: "#013C71"}}>2004</Dropdown.Item>
+                            <Dropdown.Item eventKey="2005" style={{color: "#013C71"}}>2005</Dropdown.Item>
+                            <Dropdown.Item eventKey="2006" style={{color: "#013C71"}}>2006</Dropdown.Item>
+                            <Dropdown.Item eventKey="2007" style={{color: "#013C71"}}>2007</Dropdown.Item>
+                            <Dropdown.Item eventKey="2008" style={{color: "#013C71"}}>2008</Dropdown.Item>
+                            <Dropdown.Item eventKey="2009" style={{color: "#013C71"}}>2009</Dropdown.Item>
+                            <Dropdown.Item eventKey="2010" style={{color: "#013C71"}}>2010</Dropdown.Item>
+                            <Dropdown.Item eventKey="2011" style={{color: "#013C71"}}>2011</Dropdown.Item>
+                            <Dropdown.Item eventKey="2012" style={{color: "#013C71"}}>2012</Dropdown.Item>
+                            <Dropdown.Item eventKey="2013" style={{color: "#013C71"}}>2013</Dropdown.Item>
+                            <Dropdown.Item eventKey="2014" style={{color: "#013C71"}}>2014</Dropdown.Item>
+                            <Dropdown.Item eventKey="2015" style={{color: "#013C71"}}>2015</Dropdown.Item>
+                            <Dropdown.Item eventKey="2016" style={{color: "#013C71"}}>2016</Dropdown.Item>
+                            <Dropdown.Item eventKey="2017" style={{color: "#013C71"}}>2017</Dropdown.Item>
+                            
+                        </DropdownButton>  
+                    </ButtonToolbar>
+                </div>
 
                 <Table striped bordered hover className="table" >
                     <thead>
