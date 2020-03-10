@@ -14,7 +14,7 @@ To get the project up and running, in the project directory, you can run:
 - Utilized NCHS’s API for Leading causes of death in the United States which can be found at https://catalog.data.gov/dataset/age-adjusted-death-rates-for-the-top-10-leading-causes-of-death-united-states-2013
 
 - React JS Front End
-- Ruby on Rails API Back End
+- Ruby on Rails API Back End (can be found at: https://github.com/Barak-S/NCHS-API)
 - PostgreSQL database for persisting all relevant state statistics from the NCHS server to the backend.
 
 
