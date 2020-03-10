@@ -75,6 +75,11 @@ input{
   align-content: center;
 }
 
-
+button.buttonF:hover {
+  background-color: #F8F9FA;
+  height: 38px;
+  color:#013C71;
+  transition: 0.3s;
+}
 
 
