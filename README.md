@@ -8,7 +8,7 @@ To get the project up and running, in the project directory, you can run:
 
 - On initial page render, the application will fetch for all statistics for the most up to date year on the server which is 2017.
 
-- Users have the ability to filter the pages results by either searching by state name, or selecting a year from the dropdown.
+- Users have the ability to filter the page results by either searching by state name, or selecting a year from the dropdown.
 
 
 - Utilized NCHS’s API for Leading causes of death in the United States which can be found at https://catalog.data.gov/dataset/age-adjusted-death-rates-for-the-top-10-leading-causes-of-death-united-states-2013
