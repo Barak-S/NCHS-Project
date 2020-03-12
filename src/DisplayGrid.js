@@ -4,7 +4,7 @@ import { ButtonToolbar, DropdownButton, Dropdown, Form } from 'react-bootstrap';
 
 import './App.css';
 
-const url = "http://3d1376b7.ngrok.io/statistics"
+const url = "http://031e7ed0.ngrok.io/statistics"
 
 
 export default class DisplayGrid extends React.Component{
@@ -56,32 +56,6 @@ export default class DisplayGrid extends React.Component{
             year
         },()=>this.getYearStats(this.state.year))
     }
-
-    // renderStates(){
-    //     return(
-
-    //         this.state.healthData.map(s=>{
-    //             return(
-    //                 <tr key={s.id}>
-    //                     <td>{s.state}</td>
-    //                     <td>{s.cause === "Unintentional injuries" && s.count }</td>
-    //                     <td>{s.cause === "All causes"&& s.count }</td>
-    //                     <td>{s.cause === "Alzheimer's disease"&& s.count }</td>
-    //                     <td>{s.cause === "Stroke"&& s.count }</td>
-    //                     <td>{s.cause === "CLRD"&& s.count }</td>
-    //                     <td>{s.cause === "Diabetes"&& s.count }</td>
-    //                     <td>{s.cause === "Heart disease"&& s.count }</td>
-    //                     <td>{s.cause === "Influenza and pneumonia"&& s.count }</td>
-    //                     <td>{s.cause === "Suicide"&& s.count }</td>
-    //                     <td>{s.cause === "Cancer"&& s.count }</td>
-    //                     <td>{s.cause === "Kidney disease"&& s.count }</td>
-                        
-    //                 </tr>
-
-    //             )
-    //         })      
-    //     ) 
-    // }
 
     searchTermChange(e){
         this.setState({
