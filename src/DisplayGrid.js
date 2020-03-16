@@ -11,8 +11,6 @@ export default class DisplayGrid extends React.Component{
 
     state={
         healthData: [],
-        source: '',
-        description: '',
         year: "2017",
         searchTerm: "",
         states: [],
