@@ -4,7 +4,7 @@ import { ButtonToolbar, DropdownButton, Dropdown, Form } from 'react-bootstrap';
 
 import './App.css';
 
-const url = "http://031e7ed0.ngrok.io/statistics"
+const url = "http://d893e23e.ngrok.io/statistics"
 
 
 export default class DisplayGrid extends React.Component{
@@ -77,7 +77,7 @@ export default class DisplayGrid extends React.Component{
                         
                         {this.state.healthData.filter(obj=> obj.state === s).map(stat=>{
                             return(
-                                <td key={ stat.id}>{ stat.count }</td>
+                                <td key={ stat.id }>{ stat.count }</td>
                             )
                         })}
                         
