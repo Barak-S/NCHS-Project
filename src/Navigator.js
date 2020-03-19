@@ -16,7 +16,7 @@ export default class Navigator extends React.Component{
                     <Nav className="mr-auto">
                         <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>CONTACT</Nav.Link>   
                         <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>ABOUT</Nav.Link>   
-                        <Nav.Link href="https://github.com/Barak-S/NCHS-Project" style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>GITHUB</Nav.Link>   
+                        <Nav.Link onClick={()=> window.open("https://github.com/Barak-S/NCHS-Project", "_blank")} style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>GITHUB</Nav.Link>   
                     </Nav>
                     <div style={{marginRight: "13.5%"}}>
                     <Form inline>
