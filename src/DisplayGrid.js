@@ -4,7 +4,7 @@ import { ButtonToolbar, DropdownButton, Dropdown, Form } from 'react-bootstrap';
 
 import './App.css';
 
-const url = "http://d893e23e.ngrok.io/statistics"
+const url = "https://nchs-project-backend.herokuapp.com/statistics"
 
 
 export default class DisplayGrid extends React.Component{
