@@ -14,13 +14,13 @@ export default class Navigator extends React.Component{
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link to="/">
-                            <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 17, marginLeft:25}}>HOME</Nav.Link>   
+                        <Link to="/" style={{ textDecoration: 'none' }}>
+                            <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>HOME</Nav.Link>   
                         </Link>
-                        <Link to="/contact">
+                        <Link to="/contact" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>CONTACT</Nav.Link>   
                         </Link>
-                        <Link to="/about">
+                        <Link to="/about" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>ABOUT</Nav.Link>   
                         </Link>
                         <Nav.Link onClick={()=> window.open("https://github.com/Barak-S/NCHS-Project", "_blank")} style={{color:"#013C71", fontWeight: "700", fontSize: 15, marginLeft:25}}>GITHUB</Nav.Link>   
