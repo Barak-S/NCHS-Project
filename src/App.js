@@ -1,19 +1,34 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import DisplayGrid from './DisplayGrid'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './Navigator'
+import DisplayGrid from './DisplayGrid'
+import Contact from './Contact'
+import About from './About'
 import Footer from'./Footer'
 
 function App() {
   return (
-    <div>
-      <header >
-        <Nav></Nav>
-      </header>
-        <DisplayGrid></DisplayGrid>
-        <Footer></Footer>
-    </div>
+    <Router>
+      <div>
+        <header >
+          <Nav></Nav>
+        </header>
+        <body>
+          <Switch>
+            <Route exact path= "/" render={(routerProps) => <DisplayGrid {...routerProps} />}/>
+          </Switch>
+          <Switch>
+            <Route exact path= "/contact" render={(routerProps) => <Contact {...routerProps}/>}/>
+          </Switch>
+          <Switch>
+            <Route exact path= "/about" render={(routerProps) => <About {...routerProps}/>}/>
+          </Switch>
+        </body>
+          <Footer></Footer>
+      </div>
+    </Router>
   );
 }
 
