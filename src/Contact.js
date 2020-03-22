@@ -15,7 +15,7 @@ export default function Contact(){
                                 <Col xs={8} md={4}>
                                 <Image src="../headshot.png" thumbnail />
                                 <Card.Title style={{paddingTop:12, color: "#013C71"}}>Barak Saidoff</Card.Title>
-                                <Card.Text style={{color: "#013C71"}}>Full Stack Software Developer</Card.Text>
+                                <Card.Text style={{color: "#013C71", fontWeight: "600", paddingBottom:8.5}}>Full Stack Software Developer</Card.Text>
                                 </Col>
                                 <Col>
                                 <p style={{color: "#013C71"}}>Experienced in Ruby on Rails, JavaScript and ReactJS/ React Native based programming. Background in sales, financial services, and military leadership.</p>
