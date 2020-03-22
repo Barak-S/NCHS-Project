@@ -96,7 +96,7 @@ export default class DisplayGrid extends React.Component{
 
 
         return(
-            <div style={{textAlign: "center", paddingTop: 50}}>
+            <div style={{textAlign: "center", paddingTop: 50, paddingBottom: 100}}>
                 
                 <h3 style={{color: "#013C71", fontWeight: "600"}}>NCHS - Leading Causes of Death: United States</h3>
                 <div style={{marginTop: 45, marginRight: 55, marginLeft:55, marginBottom:37.5}}>

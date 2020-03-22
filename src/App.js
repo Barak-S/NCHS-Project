@@ -11,7 +11,7 @@ import Footer from'./Footer'
 function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
         <header >
           <Nav></Nav>
         </header>
@@ -26,7 +26,10 @@ function App() {
             <Route exact path= "/about" render={(routerProps) => <About {...routerProps}/>}/>
           </Switch>
         </body>
+        <footer>
           <Footer></Footer>
+
+        </footer>
       </div>
     </Router>
   );
