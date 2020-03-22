@@ -71,16 +71,22 @@ input{
   height: 110px;
   text-align: center;
   align-content: center;
+
+  left:0;
+  bottom:0;
+  right:0;
 }
 
 .contact{
   background-color: #ffffff;
-  height: 575px; 
+  padding-bottom: 55px;
+  height: 100%;
 }
 
 .about{
   background-color: #ffffff;
   text-align: center;
+  height: 100%;
 }
 
 

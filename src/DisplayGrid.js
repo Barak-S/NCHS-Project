@@ -92,6 +92,8 @@ export default class DisplayGrid extends React.Component{
 
     render(){
 
+        console.log(this.state.years)
+
 
         return(
             <div style={{textAlign: "center", paddingTop: 50}}>
@@ -110,9 +112,6 @@ export default class DisplayGrid extends React.Component{
                             key="down"
                             onSelect= {(e)=>this.changeYear(e)}
                         >
-                    
-                            <Dropdown.Item eventKey="1999" style={{color: "#013C71"}}>1999</Dropdown.Item>
-                            <Dropdown.Item eventKey="2000" style={{color: "#013C71"}}>2000</Dropdown.Item>
                             <Dropdown.Item eventKey="2001" style={{color: "#013C71"}}>2001</Dropdown.Item>
                             <Dropdown.Item eventKey="2002" style={{color: "#013C71"}}>2002</Dropdown.Item>
                             <Dropdown.Item eventKey="2003" style={{color: "#013C71"}}>2003</Dropdown.Item>
@@ -156,8 +155,6 @@ export default class DisplayGrid extends React.Component{
                         {this.renderRows()}
                     </tbody>
                 </Table>
-                        
-                
                 </div>
             </div>
         )

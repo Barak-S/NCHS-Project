@@ -18,6 +18,10 @@ export default function Contact(){
                                 <Card.Text style={{color: "#013C71"}}>Full Stack Software Developer</Card.Text>
                                 </Col>
                                 <Col>
+                                <p style={{color: "#013C71"}}>Experienced in Ruby on Rails, JavaScript and ReactJS/ React Native based programming. Background in sales, financial services, and military leadership.</p>
+
+                                <p style={{color: "#013C71"}}><strong>Technical Skills: </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
+                                
                                 <ul className="navbar-nav">
                                     <li>
                                         <img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" style={{height: 63, padding:10,}} onClick={()=> window.open("https://www.linkedin.com/in/barak-saidoff-3a2a36b2/", "_blank")} alt="LinkedIn"></img>
@@ -25,10 +29,11 @@ export default function Contact(){
                                     <li>
                                         <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" style={{height: 63, padding:10}} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}alt="GitHub"></img>
                                     </li>
+
                                 </ul>
-                                </Col>
-                                
+                                </Col> 
                             </Row>
+
                         </Container>
                     </div>
                 </Card.Body>
