@@ -92,8 +92,6 @@ export default class DisplayGrid extends React.Component{
 
     render(){
 
-        console.log(this.state.years)
-
 
         return(
             <div style={{textAlign: "center", paddingTop: 50, paddingBottom: 100}}>
