@@ -20,7 +20,7 @@ export default function Contact(){
                                 <Col>
                                 <p style={{color: "#013C71"}}>Experienced in Ruby on Rails, JavaScript and ReactJS/ React Native based programming. Background in sales, financial services, and military leadership.</p>
 
-                                <p style={{color: "#013C71"}}><strong>Technical Skills: </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
+                                <p style={{color: "#013C71"}}><strong>Technical Skills: </strong>Ruby, Rails, SQL, JavaScript, React/ React Native based programming</p>
                                 
                                 <ul className="navbar-nav">
                                     <li>

@@ -77,7 +77,7 @@ export default class DisplayGrid extends React.Component{
                         
                         {this.state.healthData.filter(obj=> obj.state === s).map(stat=>{
                             return(
-                                <td key={ stat.id }>{ stat.count }</td>
+                                <td key={ stat.id }>{ parseInt(stat.count).toLocaleString() }</td>
                             )
                         })}
                         
