@@ -132,7 +132,7 @@ export default class DisplayGrid extends React.Component{
                     </ButtonToolbar>
                 </div>
 
-                <Table striped bordered hover className="table" >
+                <Table striped hover responsive className="table" >
                     <thead>
                         <tr>
                             <th style={{color: "#013C71"}}>States</th>
